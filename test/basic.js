@@ -11,12 +11,12 @@ describe('basic tokens test', function () {
     ;
 
   before(function (done) {
-    app = require('cantina');
+    app = require('cantina').createApp();
     app.boot(function (err) {
       assert.ifError(err);
 
       app.silence();
-      require('../');
+      app.require('../');
 
       app.start(done);
     });
